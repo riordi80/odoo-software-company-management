@@ -157,10 +157,6 @@ gestion_software/
 - **Odoo Version**: 16.0
 - **License**: LGPL-3
 
-## Author
-
-Ricardo Ortiz Díaz
-
 ## Contributing
 
 Feel free to submit issues and enhancement requests.
