@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="view_empresa_contratadora_tree" model="ir.ui.view">
+            <field name="name">gestion_software.empresa_contratadora.tree</field>
+            <field name="model">gestion_software.empresa_contratadora</field>
+            <field name="arch" type="xml">
+                <tree string="Empresas Contratadoras">
+                    <field name="name"/>
+                    <field name="cif"/>
+                    <field name="contacto"/>
+                    <field name="telefono"/>
+                    <field name="email"/>
+                    <field name="project_count" string="Proyectos"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_empresa_contratadora_form" model="ir.ui.view">
+            <field name="name">gestion_software.empresa_contratadora.form</field>
+            <field name="model">gestion_software.empresa_contratadora</field>
+            <field name="arch" type="xml">
+                <form string="Empresa Contratadora">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_projects" type="object" class="oe_stat_button" icon="fa-briefcase">
+                                <field name="project_count" widget="statinfo" string="Proyectos"/>
+                            </button>
+                        </div>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Nombre de la Empresa..."/>
+                            </h1>
+                        </div>
+                        <group>
+                            <group string="Datos Fiscales">
+                                <field name="cif"/>
+                                <field name="contacto"/>
+                            </group>
+                            <group string="Contacto">
+                                <field name="telefono"/>
+                                <field name="email" widget="email"/>
+                                <field name="direccion"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Proyectos Contratados" name="proyectos">
+                                <field name="project_ids" mode="tree">
+                                    <tree string="Proyectos" editable="bottom">
+                                        <field name="name"/>
+                                        <field name="user_id"/>
+                                        <field name="fecha_contratacion"/>
+                                        <field name="presupuesto" widget="monetary"/>
+                                        <field name="currency_id" invisible="1"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Notas" name="notas">
+                                <field name="notas"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_empresa_contratadora" model="ir.actions.act_window">
+            <field name="name">Empresas Contratadoras</field>
+            <field name="res_model">gestion_software.empresa_contratadora</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

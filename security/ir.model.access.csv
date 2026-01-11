@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_empresa_jefe,jefe.empresa,model_gestion_software_empresa_contratadora,group_jefe_proyectos,1,1,1,1
+access_empresa_analista,analista.empresa,model_gestion_software_empresa_contratadora,group_analista,1,0,0,0
+access_empresa_prog,prog.empresa,model_gestion_software_empresa_contratadora,group_programador,1,0,0,0
+access_project_jefe,jefe.project,project.model_project_project,group_jefe_proyectos,1,1,1,1
+access_project_analista,analista.project,project.model_project_project,group_analista,1,0,0,0
+access_project_prog,prog.project,project.model_project_project,group_programador,1,0,0,0
+access_task_jefe,jefe.task,project.model_project_task,group_jefe_proyectos,1,1,1,1
+access_task_analista,analista.task,project.model_project_task,group_analista,1,1,1,1
+access_task_prog,prog.task,project.model_project_task,group_programador,1,1,0,0
+access_sub_analista,analista.subtarea,model_gestion_software_subtarea,group_analista,1,1,1,1
+access_sub_prog,prog.subtarea,model_gestion_software_subtarea,group_programador,1,1,0,0
